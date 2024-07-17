@@ -13,11 +13,14 @@ public class TestFactoryPattern {
 
         // Add items and notify observers
         System.out.println("First addition:");
+        order.addItem(190.0);
         order.addItem(100.0);
-        order.addItem(150.0);
+        order.addItem(250.0);
+        order.addItem(100.0);
+        order.addItem(20.0);
 
         // Detach QuantityObserver and make another change
-        order.detach(quantityObserver);
+        order.attach(quantityObserver);
 
         System.out.println("Second addition (after detaching QuantityObserver):");
         order.addItem(50.0);
